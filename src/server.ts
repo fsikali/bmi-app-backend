@@ -10,6 +10,10 @@ import app from "./app";
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+app.get("/", (req, res) => {
+  res.json({ message: "BMI Backend is running 🚀" });
+});
+
 // Debug check
 console.log("DB_USER:", process.env.DB_USER);
 console.log("DB_PASSWORD:", process.env.DB_PASSWORD);

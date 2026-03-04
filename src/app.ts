@@ -11,6 +11,10 @@ app.use(cors({
   credentials: true
 }));
 
+app.get("/", (req, res) => {
+  res.send("BMI API is running. Use /api/auth, /api/bmi, /api/quotes");
+});
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
