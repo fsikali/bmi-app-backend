@@ -9,9 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: ["http://localhost:3000",
-    "https://bmi-app-frontend.vercel.app"
-  ], // allow Next.js frontend
+  origin: ["http://localhost:3000", "https://bmi-app-frontend.vercel.app"], // allow Next.js frontend
   credentials: true
 }));
 
