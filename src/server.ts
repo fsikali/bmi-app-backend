@@ -1,18 +1,15 @@
 // src/server.ts
 import dotenv from "dotenv";
-import path from "path";
+// import path from "path";
 
 // Load .env from project root
-dotenv.config({ path: path.resolve(__dirname, "../.env") });
+// dotenv.config({ path: path.resolve(__dirname, "../.env") });
+dotenv.config();
 
 import app from "./app";
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-app.get("/", (req, res) => {
-  res.json({ message: "BMI Backend is running 🚀" });
-});
 
 // Debug check
 console.log("DB_USER:", process.env.DB_USER);
