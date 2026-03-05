@@ -1,5 +1,6 @@
 // src/server.ts
 import dotenv from "dotenv";
+import cors from "cors";
 // import path from "path";
 
 // Load .env from project root
@@ -7,6 +8,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import app from "./app";
+
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"]
+}));
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

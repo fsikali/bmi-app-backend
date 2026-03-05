@@ -11,7 +11,8 @@ export class AuthController {
       const token = await authService.signup(email, password);
       res.json({ token });
     } catch (err: any) {
-      res.status(400).json({ error: err.message });
+      console.error("Signup error:", err);
+      res.status(400).json({ error: err.message || String(err)});
     }
   }
 
@@ -21,7 +22,8 @@ export class AuthController {
       const token = await authService.login(email, password);
       res.json({ token });
     } catch (err: any) {
-      res.status(400).json({ error: err.message });
+      console.error("Login error:", err);
+      res.status(400).json({ error: err.message || String(err) });
     }
   }
 }
